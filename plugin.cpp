@@ -60,7 +60,8 @@ static const char *default_config = QUOTE({
 			"type" : "string",
 		       	"default" : "usb4704",
 			 "order": "1",
-			 "displayName": "Asset Name"
+			 "displayName": "Asset Name",
+			 "mandatory": "true"
 			 },
 		"connections" : {
 			"description" : "Utilisation of connections on USB-4704",
