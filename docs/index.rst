@@ -1,11 +1,10 @@
 .. Images
-.. |usb_1| image:: images/usb_1.jpg
-.. |usb_1| image:: images/usb_1.jpg
+.. |usb_2| image:: images/usb_2.jpg
 
 Advantech USB-4704
 ==================
 
-.. image:: images/usb1.jpg
+.. image:: images/usb_1.jpg
      :align: left
 
 The *fledge-south-usb4704* plugin is a south plugin that is designed to gather data from an Advantech USB-4704 data acquisition module. The module supports 8 digital inputs and 8 analogue inputs. It is possible to configure the plugin to combine multiple digital input to create a single numeric data point or have each input as a boolean data point. Each analogue input, which is a 14 bit analogue to digital converter, becomes a single numeric data point in the range 0 to 16383, although a scale and offset may be applied to these values.
