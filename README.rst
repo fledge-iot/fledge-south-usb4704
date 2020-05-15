@@ -23,9 +23,7 @@ To build usb4704 plugin with given `requirements.sh <requirements.sh>`_ or the f
 - The environment variable BIODAQDIR should be pointed at the directory
   that has the libs and include subdirectoy from the USB-4704 SDK_driver
   downloaded from the Advantech support website.
-  http://downloadt.advantech.com/download/downloadsr.aspx?File_Id=1-1N61WCN
-  E.g. If you downloaded this file to yout home directory run
-  export BIODAQDIR=~/DAQNavi_Linux/SDK_Drivers/linux_driver_source_3.2.8.0_64bit
+  See `requirements.sh <requirements.sh>`_ for details. 
 - By default the Fledge develop package header files and libraries
   are expected to be located in /usr/include/fledge and /usr/lib/fledge
 - If **FLEDGE_ROOT** env var is set and no -D options are set,
