@@ -3,6 +3,7 @@
 plugin_name=usb4704
 plugin_type=south
 plugin_install_dirname=${plugin_name}
+additional_libs="usr/lib:/usr/lib/libbiodaq.so,usr/lib:/usr/lib/libbiodaqutil.so,opt/advantech/libs:/opt/advantech/libs/libbiodaq.so,opt/advantech/libs:/opt/advantech/libs/libbiodaqutil.so"
 
 # Now build up the runtime requirements list. This has 3 components
 #   1. Generic packages we depend on in all architectures and package managers
