@@ -20,6 +20,21 @@
 ## Author: Ashish Jabble
 ##
 
+os_name=`(grep -o '^NAME=.*' /etc/os-release | cut -f2 -d\" | sed 's/"//g')`
+os_version=`(grep -o '^VERSION_ID=.*' /etc/os-release | cut -f2 -d\" | sed 's/"//g')`
+echo "Platform is ${os_name}, Version: ${os_version}"
+
+if [[ ( $os_name == *"Red Hat"* || $os_name == *"CentOS"* ) &&  $os_version == *"7"* ]]; then
+	yum -y install kernel-headers kernel-devel
+	if [ `ls /lib/modules | wc -l` -gt 1 ]; then
+		echo "You have multiple kernel module versions installed, this will break the Adventech"
+	        echo "driver build.  Please fix the contents of /lib/modules and try again."
+		exit 1
+	fi
+else
+	sudo apt install -y unzip
+fi
+
 if [ $# -eq 1 ]; then
 	DIR=$1
 	if [ ! -d DIR ]; then
@@ -29,13 +44,13 @@ else
 	DIR=~/advantech
 fi
 
+
 rm -rf ${DIR}
 mkdir -p ${DIR}
 cd ${DIR}
 echo Downloading Advantech library...
 
 wget http://downloadt.advantech.com/download/downloadsr.aspx?File_Id=1-1WS2C1H -O linux_driver_source_4.0.2.0_64bit.run.zip
-sudo apt install -y unzip
 echo Unzipping driver source...
 unzip linux_driver_source_4.0.2.0_64bit.run.zip
 sudo chmod +x linux_driver_source_4.0.2.0_64bit.run
