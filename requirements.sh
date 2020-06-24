@@ -25,7 +25,7 @@ os_version=`(grep -o '^VERSION_ID=.*' /etc/os-release | cut -f2 -d\" | sed 's/"/
 echo "Platform is ${os_name}, Version: ${os_version}"
 
 if [[ ( $os_name == *"Red Hat"* || $os_name == *"CentOS"* ) &&  $os_version == *"7"* ]]; then
-	yum -y install kernel-headers kernel-devel
+	sudo yum -y install kernel-headers kernel-devel
 	if [ `ls /lib/modules | wc -l` -gt 1 ]; then
 		echo "You have multiple kernel module versions installed, this will break the Adventech"
 	        echo "driver build.  Please fix the contents of /lib/modules and try again."
