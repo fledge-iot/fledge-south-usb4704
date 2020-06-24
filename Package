@@ -23,7 +23,5 @@ case "$package_manager" in
     deb)
         ;;
     rpm)
-        echo "RPM Package building for ${plugin_name} is not supported on $arch architecture!!"
-        exit 1
         ;;
 esac
