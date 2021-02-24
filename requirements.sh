@@ -34,7 +34,7 @@ mkdir -p ${DIR}
 cd ${DIR}
 echo Downloading Advantech library...
 
-wget https://driver-libs.s3.amazonaws.com/advantech/linux_driver_source_4.0.2.0_64bit.zip
+wget https://driver-libs.s3.amazonaws.com/advantech/linux_driver_source_4.0.2.0_64bit.run.zip
 sudo apt install -y unzip
 echo Unzipping driver source...
 unzip linux_driver_source_4.0.2.0_64bit.run.zip
