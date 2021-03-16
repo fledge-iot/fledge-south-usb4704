@@ -20,6 +20,8 @@
 ## Author: Ashish Jabble
 ##
 
+driver_version='4.0.3.0_64bit'
+
 if [ $# -eq 1 ]; then
 	DIR=$1
 	if [ ! -d DIR ]; then
@@ -33,13 +35,13 @@ rm -rf ${DIR}
 mkdir -p ${DIR}
 cd ${DIR}
 echo Downloading Advantech library...
-
-wget http://downloadt.advantech.com/download/downloadsr.aspx?File_Id=1-1WS2C1H -O linux_driver_source_4.0.2.0_64bit.run.zip
-sudo apt install -y unzip
-echo Unzipping driver source...
-unzip linux_driver_source_4.0.2.0_64bit.run.zip
-sudo chmod +x linux_driver_source_4.0.2.0_64bit.run
+# From version 4.0.3.0 the downloaded file is not a zip file.
+wget https://downloadt.advantech.com/download/downloadsr.aspx?File_Id=1-21MC6UN -O linux_driver_source_${driver_version}.run
+# sudo apt install -y unzip
+# echo Unzipping driver source...
+# unzip linux_driver_source_${driver_version}.run.zip
+sudo chmod +x linux_driver_source_${driver_version}.run
 echo Installing driver source...
-sudo ./linux_driver_source_4.0.2.0_64bit.run silent install usb4702_usb4704
+sudo ./linux_driver_source_${driver_version}.run silent install usb4702_usb4704
 echo Set the environment variable BIODAQDIR to /opt/advantech
 echo export BIODAQDIR=/opt/advantech
