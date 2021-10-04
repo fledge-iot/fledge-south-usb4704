@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ##--------------------------------------------------------------------
-## Copyright (c) 2019 Dianomic Systems
+## Copyright (c) 2019 Dianomic Systems Inc.
 ##
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ mkdir -p ${DIR}
 cd ${DIR}
 echo Downloading Advantech library...
 # From version 4.0.3.0 the downloaded file is not a zip file.
-wget https://downloadt.advantech.com/download/downloadsr.aspx?File_Id=1-21MC6UN -O linux_driver_source_${driver_version}.run
+wget https://driver-libs.s3.amazonaws.com/advantech/linux_driver_source_${driver_version}.run
 # sudo apt install -y unzip
 # echo Unzipping driver source...
 # unzip linux_driver_source_${driver_version}.run.zip
