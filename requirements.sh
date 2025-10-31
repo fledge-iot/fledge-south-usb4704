@@ -36,7 +36,7 @@ mkdir -p ${DIR}
 cd ${DIR}
 echo Downloading Advantech library...
 # From version 4.0.3.0 the downloaded file is not a zip file.
-wget https://driver-libs.s3.amazonaws.com/advantech/linux_driver_source_${driver_version}.run
+wget https://raw.githubusercontent.com/dianomic/driver-libs/main/advantech/linux_driver_source_${driver_version}.run
 # sudo apt install -y unzip
 # echo Unzipping driver source...
 # unzip linux_driver_source_${driver_version}.run.zip
